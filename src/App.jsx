@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 //   secretAccessKey: '',
 // };
 
-const intra_zip = import.meta.env.VITE_APP_INTRA_FILE;
+const intra_zip = "https://intra-web-2k24.vercel.app/IntraWebDesign.rar";
 
 const App = () => {
     const [selectedFile, setSelectedFile] = useState(null);
