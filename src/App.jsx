@@ -44,7 +44,7 @@ const App = () => {
         console.log('Download Folder', intra_zip);
         const link = document.createElement('a');
         link.href = intra_zip;
-        link.setAttribute('download', `IntraWebDesign.rar`);
+        link.setAttribute('download', `./assets/IntraWebDesign.rar`);
         document.body.appendChild(link);
         link.click();
         link.remove();
