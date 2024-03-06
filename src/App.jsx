@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // import { Buffer } from "buffer";
 import storage from './appwrite.config.js';
 import {v4 as uuidv4} from 'uuid';
-
+import toast from 'react-hot-toast';
 // window.Buffer = window.Buffer || Buffer;
 
 // const config = {
@@ -26,8 +26,10 @@ const App = () => {
           const fileId=uuidv4();
           await storage.createFile(import.meta.env.VITE_APP_APPWRITE_BUCKET,fileId , selectedFile);
           console.log('File uploaded successfully');
+          toast.success("File Uploaded");
         } catch (error) {
           console.error(error);
+          toast.error("Error in Upload")
         }
       } else {
         console.error("No file selected for upload.");
