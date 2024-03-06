@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import storage from './appwrite.config.js';
 import {v4 as uuidv4} from 'uuid';
 import toast from 'react-hot-toast';
+import {  Permission, Role } from "appwrite";
+
 // window.Buffer = window.Buffer || Buffer;
 
 // const config = {
@@ -24,7 +26,9 @@ const App = () => {
           // const data = await S3FileUpload.uploadFile(selectedFile, config);
           // console.log(data);
           const fileId=uuidv4();
-          await storage.createFile(import.meta.env.VITE_APP_APPWRITE_BUCKET,fileId , selectedFile);
+          await storage.createFile(import.meta.env.VITE_APP_APPWRITE_BUCKET,fileId , selectedFile,[
+            Permission.read(Role.any()),  
+          ]);
           console.log('File uploaded successfully');
           toast.success("File Uploaded");
         } catch (error) {
