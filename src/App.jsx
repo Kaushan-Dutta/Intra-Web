@@ -5,6 +5,7 @@ import storage from './appwrite.config.js';
 import {v4 as uuidv4} from 'uuid';
 import toast from 'react-hot-toast';
 import {  Permission, Role } from "appwrite";
+import axios from 'axios'
 
 // window.Buffer = window.Buffer || Buffer;
 
