@@ -43,15 +43,26 @@ const App = () => {
         setSelectedFile(event.target.files[0]);
     };
 
-    const downloadZip = () => {
-        console.log('Download Folder', intra_zip);
-        const link = document.createElement('a');
-        link.href = intra_zip;
-        link.setAttribute('download', `./assets/IntraWebDesign.rar`);
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-    };
+    const downloadZip = async() => {
+        try {
+          
+          const result = await storage.getFileDownload('65e938003d799d68fbec', '65e9385e0228791d2e10');
+          const response = await axios.get(result.href, {
+            responseType: 'arraybuffer',
+          });
+      
+          const blob = new Blob([response.data], { type: 'application/zip' });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download ='intra-web.rar'; 
+          a.click();
+          window.URL.revokeObjectURL(url); 
+        } catch (error) {
+          console.error('File download error:', error);
+        }
+      };
+    
 
     return (
         <div className='md:px-[5rem] px-[1rem] py-[5rem] border-2 border-black h-screen bg-slate-800 text-white  flex flex-col gap-10'>
