@@ -46,7 +46,7 @@ const App = () => {
     const downloadZip = async() => {
         try {
           
-          const result = await storage.getFileDownload('65e938003d799d68fbec', '65e9385e0228791d2e10');
+          const result = await storage.getFileDownload('65e938003d799d68fbec', '65e98acf75f97a8b3529');
           const response = await axios.get(result.href, {
             responseType: 'arraybuffer',
           });
