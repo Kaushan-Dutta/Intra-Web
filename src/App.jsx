@@ -83,9 +83,9 @@ const App = () => {
                   <li>1. You have been given a folder ( <button onClick={downloadZip} className='text-red-700'>Download Folder</button>) 
  containing frames<span>(containing the designed image)</span>, assets <span>(the pictures) </span>and config <span>(colors and effects)</span> folder.</li>
                   <li>2. Judging will be done on the basis of completion of each segments like the Navbar, Effects, Use of javascript and responsiveness of the website</li>
-                  <li>3. Create a folder (zip file) with your name ( max size 15 mb ) . Add your html,css and js file. </li>
-                  <li>4. Rename your folder with your rac id and name as "racId_name"</li>
-                  <li>5. Upload the zip file here.</li>
+                  <li>3. Create a folder (zip file) with your name ( max size 5 mb ) . Add your html,css and js file. </li>
+                  <li>4. Rename your folder with your rac id and name as <b className='text-yellow-300'>"racId_name"</b></li>
+                  <li>5. Upload the <b className='text-yellow-300'>zip file</b> here.</li>
                 </ul>
             </div>
             <div className='text-center'>
