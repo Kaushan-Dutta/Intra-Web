@@ -14,8 +14,7 @@ import {  Permission, Role } from "appwrite";
 //   accessKeyId: '',
 //   secretAccessKey: '',
 // };
-
-const intra_zip = 'IntraWebDesign.rar';
+const intra_zip = './assets/IntraWebDesign.rar';
 
 const App = () => {
     const [selectedFile, setSelectedFile] = useState(null);
